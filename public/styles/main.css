@@ -1,0 +1,72 @@
+/* CURRENTLY IN: styles/main.css */
+html {
+	font-size: 12px;
+}
+
+#blogapp .blog-col {
+	/*border: 1px solid black;*/
+	text-align: center;
+}
+
+#blogapp .post-spinner {
+	animation: spinner 2.0s linear infinite;
+}
+
+#blogapp .post-item {
+	text-align: left;
+}
+
+#blogapp .post-icon {
+	float: right;
+	margin: 0 0.25rem;
+}
+
+#blogapp .post-addbtn {
+	cursor: pointer;
+}
+
+#adminapp .blog-col {
+	/*border: 1px solid black;*/
+	text-align: center;
+}
+
+#adminapp .post-spinner {
+	animation: spinner 2.0s linear infinite;
+}
+
+#adminapp .post-item {
+	font-weight: bold;
+	text-align: left;
+}
+
+#adminapp .post-icon {
+	float: right;
+	margin: 0 0.25rem;
+}
+
+#adminapp .post-addbtn {
+	cursor: pointer;
+}
+
+#adminapp .admin-input{
+	width: 100%;
+}
+
+#adminapp .admin-title{
+	width: 100%;
+}
+
+#blogapp .post-title{
+	
+}
+
+
+
+@keyframes spinner {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
