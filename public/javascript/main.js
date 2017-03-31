@@ -107,6 +107,13 @@
 
 			li.innerHTML += `<span class="glyphicon glyphicon-remove post-icon js-post-remove"></span>`;
 
+			if (postItem.data.isDone) {
+				li.innerHTML += `<span class="glyphicon glyphicon-check post-icon js-post-check green"></span>`
+			}
+			else {
+				li.innerHTML += `<span class="glyphicon glyphicon-unchecked post-icon js-post-check"></span>`
+			}
+
 			li.classList.add('list-group-item', 'post-item');
 
 			container.appendChild(li);
@@ -121,6 +128,20 @@
 					})
 					.catch((e) => {
 						alert(e)
+					});
+			});
+			li.querySelector('.js-post-check').addEventListener('click', (e) => {
+				let isDone;
+				if (postItem.data.isDone) {
+					isDone = false;
+					}
+				else {
+					isDone = true;
+					}
+
+				PUT('/api/post/' + postItem.id, {isDone})
+					.then((data) => {
+						adminRender(data);
 					});
 			});
 			
@@ -140,7 +161,6 @@
 	// 	.then((posts) => {
 	// 		render(posts);
 	// 	});
-
 	const input = document.querySelector('.js-post-text');
 	const postTitle = document.querySelector('.js-post-title-input');
 	const postBTN = document.querySelector('.js-add-post');

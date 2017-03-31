@@ -16,6 +16,11 @@ router.get('/posts',(request, response, next) => {
 	next();
 });
 
+router.get('/redirect',(request, response, next) => {
+	response.redirect('./admin.html')
+	next();
+});
+
 
 // post post
 router.post('/posts', (request, response, next) => {

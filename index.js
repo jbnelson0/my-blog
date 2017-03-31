@@ -15,11 +15,6 @@ app.use('/', serveStatic( 'public', {
 	'index': [ 'index.html' ]
 }));
 
-app.use('/admin', serveStatic( 'public', {
-	'admin': [ 'admin.html' ]
-}));
-
-
 app.use('/api',  blogApi);
 
 //have the application listen on a specific port
